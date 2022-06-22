@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/productList_lblProduct"
+            style="@style/Woo.Card.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/orderdetail_product"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/productList_btnMenu"
+            style="@style/Woo.ImageButton.More"
+            android:contentDescription="@string/orderdetail_products_recreate_shipping_label_menu"
+            android:scaleType="centerInside"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/productList_barrier"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:constraint_referenced_ids="productList_lblProduct,productList_btnMenu"
+            app:barrierDirection="bottom"
+            />
+
+        <!-- List: Products -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productList_products"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="@dimen/major_100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productList_barrier"
+            tools:itemCount="3"
+            tools:listitem="@layout/order_detail_product_list_item"
+            tools:targetApi="lollipop" />
+
+        <!-- Button: Mark order complete -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/productList_btnCreateShippingLabel"
+            style="@style/Woo.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/major_100"
+            android:layout_marginEnd="@dimen/major_100"
+            android:text="@string/orderdetail_shipping_label_create_shipping_label"
+            android:visibility="gone"
+            app:layout_goneMarginBottom="@dimen/major_100"
+            app:layout_constraintBottom_toTopOf="@id/productList_btnMarkOrderComplete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productList_products" />
+
+        <!-- Button: Mark order complete -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/productList_btnMarkOrderComplete"
+            style="@style/Woo.Button.Outlined"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/major_100"
+            android:layout_marginEnd="@dimen/major_100"
+            android:layout_marginBottom="@dimen/major_100"
+            app:layout_goneMarginBottom="@dimen/major_100"
+            android:text="@string/order_mark_complete"
+            app:layout_constraintBottom_toTopOf="@id/productList_shippingLabelsNotice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productList_btnCreateShippingLabel"
+            tools:visibility="gone" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/productList_shippingLabelsNotice"
+            style="@style/Woo.TextView.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/major_100"
+            android:layout_marginStart="@dimen/major_100"
+            android:layout_marginEnd="@dimen/major_100"
+            android:drawableStart="@drawable/ic_info_outline_24dp"
+            android:drawablePadding="@dimen/major_100"
+            android:text="@string/orderdetail_shipping_label_notice"
+            android:visibility="gone"
+            android:background="?attr/selectableItemBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/productList_btnMarkOrderComplete" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

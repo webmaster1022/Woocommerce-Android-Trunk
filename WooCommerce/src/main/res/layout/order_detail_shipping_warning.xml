@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Notice Icon ImageView -->
+        <ImageView
+            android:id="@+id/shipping_method_notice_icon"
+            android:layout_width="@dimen/image_minor_100"
+            android:layout_height="@dimen/image_minor_100"
+            android:layout_marginStart="@dimen/major_100"
+            android:layout_marginTop="@dimen/major_75"
+            android:layout_marginBottom="@dimen/major_75"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_gridicons_notice" />
+
+        <!-- Notice Message -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/shipping_method_notice_title"
+            style="@style/Woo.Card.Body.High"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/major_75"
+            android:layout_marginBottom="@dimen/major_75"
+            android:text="@string/orderdetail_shipping_notice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/shipping_method_notice_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Woo.Card.WithoutPadding"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/notif_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/major_100"
+            android:paddingTop="@dimen/minor_25"
+            android:importantForAccessibility="no"
+            android:scaleType="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:srcCompat="@drawable/ic_comment"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/notif_title"
+            style="@style/Woo.Card.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/major_100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/notif_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Neil Gaiman left a review on Fallen Angel Candelabra"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/notif_desc"
+            style="@style/Woo.Card.Body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/minor_75"
+            android:ellipsize="end"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/notif_icon"
+            app:layout_constraintTop_toBottomOf="@+id/notif_title"
+            tools:text="Pending review • Amazing!" />
+
+        <RatingBar
+            android:id="@+id/notif_rating"
+            style="@style/Woo.RatingsBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/minor_100"
+            android:isIndicator="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/notif_divider"
+            app:layout_constraintStart_toStartOf="@+id/notif_desc"
+            app:layout_constraintTop_toBottomOf="@+id/notif_desc"
+            tools:rating="4"
+            tools:visibility="visible" />
+
+        <View
+            android:id="@+id/notif_divider"
+            style="@style/Woo.Divider"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/major_100"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/notif_title"
+            app:layout_constraintTop_toBottomOf="@+id/notif_rating" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

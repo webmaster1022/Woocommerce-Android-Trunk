@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_settings"
+    app:startDestination="@id/mainSettingsFragment">
+
+    <fragment
+        android:id="@+id/mainSettingsFragment"
+        android:name="com.woocommerce.android.ui.prefs.MainSettingsFragment"
+        android:label="MainSettingsFragment">
+        <action
+            android:id="@+id/action_mainSettingsFragment_to_cardReaderFlow"
+            app:destination="@id/cardReaderFlow" >
+            <argument
+                android:name="cardReaderFlowParam"
+                app:argType="com.woocommerce.android.ui.cardreader.onboarding.CardReaderFlowParam"
+                app:nullable="false" />
+        </action>
+        <action
+            android:id="@+id/action_mainSettingsFragment_to_privacySettingsFragment"
+            app:destination="@id/privacySettingsFragment" />
+        <action
+            android:id="@+id/action_mainSettingsFragment_to_licensesFragment"
+            app:destination="@id/licensesFragment2" />
+        <action
+            android:id="@+id/action_mainSettingsFragment_to_aboutActivity"
+            app:destination="@id/aboutActivity" />
+        <action
+            android:id="@+id/action_mainSettingsFragment_to_betaFeaturesFragment"
+            app:destination="@id/betaFeaturesFragment" />
+
+        <action
+            android:id="@+id/action_mainSettingsFragment_feedbackSurveyFragment"
+            app:destination="@id/feedbackSurveyFragment" />
+        <action
+            android:id="@+id/action_mainSettingsFragment_to_featureAnnouncementDialogFragment"
+            app:destination="@id/featureAnnouncementDialogFragment" />
+        <action
+            android:id="@+id/action_mainSettingsFragment_to_nav_graph_jetpack_install"
+            app:destination="@id/nav_graph_jetpack_install" />
+    </fragment>
+    <fragment
+        android:id="@+id/privacySettingsFragment"
+        android:name="com.woocommerce.android.ui.prefs.PrivacySettingsFragment"
+        android:label="PrivacySettingsFragment" />
+
+    <activity
+        android:id="@+id/aboutActivity"
+        android:name="com.woocommerce.android.ui.prefs.UnifiedAboutScreenActivity"
+        android:label="AboutActivity"
+        tools:layout="@layout/unified_about_screen_activity" />
+
+    <fragment
+        android:id="@+id/licensesFragment2"
+        android:name="com.woocommerce.android.ui.prefs.LicensesFragment"
+        android:label="LicensesFragment" />
+    <fragment
+        android:id="@+id/betaFeaturesFragment"
+        android:name="com.woocommerce.android.ui.prefs.BetaFeaturesFragment"
+        android:label="BetaFeaturesFragment" />
+    <fragment
+        android:id="@+id/feedbackSurveyFragment"
+        android:name="com.woocommerce.android.ui.feedback.FeedbackSurveyFragment"
+        android:label="FeedbackSurveyFragment">
+        <argument
+            android:name="surveyType"
+            android:defaultValue='MAIN'
+            app:argType="com.woocommerce.android.ui.feedback.SurveyType" />
+        <action
+            android:id="@+id/action_feedbackSurveyFragment_to_feedbackCompletedFragment"
+            app:destination="@id/feedbackCompletedFragment"
+            app:popUpTo="@id/mainSettingsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/feedbackCompletedFragment"
+        android:name="com.woocommerce.android.ui.feedback.FeedbackCompletedFragment"
+        android:label="FeedbackCompletedFragment">
+        <argument
+            android:name="surveyType"
+            app:argType="com.woocommerce.android.ui.feedback.SurveyType" />
+    </fragment>
+    <dialog
+        android:id="@+id/featureAnnouncementDialogFragment"
+        android:name="com.woocommerce.android.ui.whatsnew.FeatureAnnouncementDialogFragment"
+        android:label="FeatureAnnouncementDialogFragment">
+        <argument
+            android:name="announcement"
+            app:argType="com.woocommerce.android.model.FeatureAnnouncement"
+            app:nullable="false" />
+    </dialog>
+    <fragment
+        android:id="@+id/WPComWebViewFragment"
+        android:name="com.woocommerce.android.ui.common.wpcomwebview.WPComWebViewFragment"
+        android:label="WPComWebViewFragment"
+        tools:layout="@layout/fragment_wpcom_webview">
+        <argument
+            android:name="urlToLoad"
+            app:argType="string" />
+        <argument
+            android:name="urlToTriggerExit"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+    </fragment>
+    <action android:id="@+id/action_global_WPComWebViewFragment" app:destination="@id/WPComWebViewFragment"/>
+    <include app:graph="@navigation/nav_graph_jetpack_install" />
+    <include app:graph="@navigation/nav_graph_card_reader_flow" />
+</navigation>

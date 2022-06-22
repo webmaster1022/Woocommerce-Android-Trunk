@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/orderNote_icon"
+        android:layout_width="@dimen/image_minor_60"
+        android:layout_height="@dimen/image_minor_60"
+        android:layout_marginTop="@dimen/minor_100"
+        android:layout_marginStart="@dimen/major_100"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_note_private"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/orderNote_header"
+        style="@style/Woo.ListItem.Subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/minor_100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/orderNote_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Nov 13, 2017 at 9:54 AM"/>
+
+    <com.woocommerce.android.widgets.WCSelectableTextView
+        android:id="@+id/orderNote_note"
+        style="@style/Woo.ListItem.Body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/minor_50"
+        android:layout_marginBottom="@dimen/major_75"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/orderNote_icon"
+        app:layout_constraintTop_toBottomOf="@id/orderNote_header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="Order status changed from pending payment to processing."/>
+</androidx.constraintlayout.widget.ConstraintLayout>

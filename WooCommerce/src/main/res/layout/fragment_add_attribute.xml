@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_window_background"
+    android:orientation="vertical"
+    tools:context="com.woocommerce.android.ui.products.variations.attributes.AddAttributeFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Woo.Card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/major_100"
+                android:text="@string/product_create_attribute_helper"
+                android:textAppearance="@style/TextAppearance.Woo.Caption" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameLayout"
+                style="@style/Woo.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/major_100"
+                android:hint="@string/product_new_attribute_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/attributeEditText"
+                    style="@style/Woo.TextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/minor_100"
+        android:background="?attr/colorSurface"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/attribute_selection_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/major_100"
+            android:text="@string/product_select_attribute"
+            android:textColor="@color/color_on_surface_medium"
+            android:textAppearance="@style/TextAppearance.Woo.Subtitle2" />
+
+        <View
+            android:id="@+id/divider"
+            style="@style/Woo.Divider"
+            android:layout_marginStart="@dimen/major_100"
+            android:layout_width="match_parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/attributeList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:itemCount="3"
+            tools:listitem="@layout/attribute_item" />
+    </LinearLayout>
+
+</LinearLayout>

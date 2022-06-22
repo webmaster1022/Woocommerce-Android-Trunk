@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_refunds"
+    app:startDestination="@id/issueRefundFragment" >
+    <fragment
+        android:id="@+id/refundSummaryFragment"
+        android:name="com.woocommerce.android.ui.refunds.RefundSummaryFragment"
+        tools:layout="@layout/fragment_refund_summary">
+        <action
+            android:id="@+id/action_refundSummaryFragment_to_refundConfirmationDialog"
+            app:destination="@id/refundConfirmationDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/issueRefundFragment"
+        android:name="com.woocommerce.android.ui.refunds.IssueRefundFragment"
+        tools:layout="@layout/fragment_issue_refund">
+        <action
+            android:id="@+id/action_issueRefundFragment_to_refundSummaryFragment"
+            app:destination="@id/refundSummaryFragment" />
+        <argument
+            android:name="orderId"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_issueRefundFragment_to_refundItemsPickerDialog"
+            app:destination="@id/refundItemsPickerDialog" />
+        <action
+            android:id="@+id/action_issueRefundFragment_to_refundAmountDialog"
+            app:destination="@id/refundAmountDialog" />
+    </fragment>
+    <dialog
+        android:id="@+id/refundItemsPickerDialog"
+        android:name="com.woocommerce.android.ui.refunds.RefundItemsPickerDialog"
+        tools:layout="@layout/number_picker_dialog"
+        android:label="RefundItemsPickerDialog" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="uniqueId"
+            app:argType="long" />
+        <argument
+            android:name="maxValue"
+            app:argType="integer" />
+        <argument android:name="currentValue"
+            app:argType="integer" />
+    </dialog>
+    <dialog
+        android:id="@+id/refundAmountDialog"
+        android:name="com.woocommerce.android.ui.refunds.RefundAmountDialog"
+        tools:layout="@layout/currency_amount_dialog"
+        android:label="RefundAmountDialog" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="maxValue"
+            app:argType="java.math.BigDecimal" />
+        <argument android:name="currentValue"
+            app:argType="java.math.BigDecimal" />
+        <argument
+            android:name="minValue"
+            app:argType="java.math.BigDecimal" />
+        <argument
+            android:name="message"
+            app:argType="string" />
+    </dialog>
+    <dialog
+        android:id="@+id/refundConfirmationDialog"
+        android:name="com.woocommerce.android.ui.refunds.RefundConfirmationDialog"
+        android:label="RefundConfirmationDialog" >
+        <action
+            android:id="@+id/action_refundConfirmationDialog_to_cardReaderFlow"
+            app:destination="@id/cardReaderFlow"
+            app:popUpTo="@+id/refundConfirmationDialog"
+            app:popUpToInclusive="true">
+            <argument
+                android:name="cardReaderFlowParam"
+                app:argType="com.woocommerce.android.ui.cardreader.onboarding.CardReaderFlowParam"
+                app:nullable="false" />
+        </action>
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="message"
+            app:argType="string" />
+        <argument android:name="positiveButtonTitle"
+            app:argType="string" />
+    </dialog>
+</navigation>

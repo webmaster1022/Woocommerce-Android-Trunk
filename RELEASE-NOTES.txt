@@ -1,0 +1,525 @@
+*** PLEASE FOLLOW THIS FORMAT: [<priority indicator, more stars = higher priority>] <description> [<PR URL>]
+
+9.5
+-----
+
+
+9.4
+-----
+
+
+9.3
+-----
+- [*] In-Person Payments: Individual Card Reader Manual tabs removed from IPP Screen and moved to the new screen `Card Reader Manuals` [https://github.com/woocommerce/woocommerce-android/pull/6518]
+- [*] Show "We don't support stripe in Canada" when both WCPay and Stripe are active [https://github.com/woocommerce/woocommerce-android/pull/6573]
+- [***] In-Person Payments: In-Person Payments in Canada is now available for public! [https://github.com/woocommerce/woocommerce-android/pull/6579]
+- [*] In-Person Payments: Removed unnecessary notification when interac refund is initiated [https://github.com/woocommerce/woocommerce-android/pull/6601]
+- [*] In-Person Payments: Do not connect to the last know reader automatically after logout and site change [https://github.com/woocommerce/woocommerce-android/pull/6616]
+
+9.2
+-----
+- [*] In-Person Payments: update the reader's battery level when it's changed on the card reader's details screen
+- [*] In-Person Payments: In cases when IPP onboarding is not completed, we show the details about what's wrong right away, without making a network call
+- [*] Fixed a bug that caused decimal values to be rounded when the decimal separator was a comma [https://github.com/woocommerce/woocommerce-android/pull/6426]
+- [*] Most of the fields in order detail now support long press to copy to the clipboard [https://github.com/woocommerce/woocommerce-android/pull/6430]
+- [*] Fixed a crash when trying to remove an unsynchronized product in a new synced order [https://github.com/woocommerce/woocommerce-android/pull/6459]
+
+9.1
+-----
+- [**] Variation Detail: Don't clear price on attribute/visibility/inventory change. [https://github.com/woocommerce/woocommerce-android/compare/issue/6345-fix-price-on-variations-2?expand=1]
+- [*] Introduced Location permission rationale dialog in IPP connection flow
+[***] Merchants can now view coupons in their stores by enabling Coupon Management in Beta Features. [https://github.com/woocommerce/woocommerce-android/pull/6318]
+
+9.0
+-----
+- [*] Fixes a bug that caused the scheduled sale dates of a product to be different than the selected dates. [https://github.com/woocommerce/woocommerce-android/pull/6188]
+
+8.9
+-----
+- [*] Fixed an issue to update the product price to zero, if required. [https://github.com/woocommerce/woocommerce-android/pull/6039]
+- [*] Added support for moderating reviews of specific products from the Product Details screen. [https://github.com/woocommerce/woocommerce-android/pull/6070]
+- [*] In-Person Payments: Removed collecting L2/L3 data. [https://github.com/woocommerce/woocommerce-android/pull/6084]
+- [***] Order Creation is now available for the general public making possible to fully create custom orders directly from the app [https://github.com/woocommerce/woocommerce-android/pull/6092]
+
+8.8
+-----
+
+8.7
+-----
+- [*] Fixed an issue where on rare cases the app might end up displaying order notes for the wrong note. [https://github.com/woocommerce/woocommerce-android/pull/5971]
+- [*] In-Person Payments: Add support for accepting payments on bookable products
+- [***] Beta Feature: Order Creation is now improved, supporting Fees and Shipping costs.
+
+8.6
+-----
+- [**] In-Person Payments: Add support for Stripe by WooCommerce extension
+- [***] All merchants can create Simple Payments orders. [https://github.com/woocommerce/woocommerce-android/issues/5804]
+- [***] Introduced a new main navigation tab called "More", where you can browse different sub-sections of the app: Switch Store, Settings, WooCommerce Admin, View Store and Reviews. [https://github.com/woocommerce/woocommerce-android/pull/5897]
+
+8.5
+-----
+- [***] Beta Feature: It's now possible to create Orders from the app. For now only including products, customer notes, shipping and billing addresses.
+- [***] Store admins can now access sites with plugins that have Jetpack Connection Package (e.g. WooCommerce Payments, Jetpack Backup) in the app. These sites do not require Jetpack-the-plugin to connect anymore. Store admins can still install Jetpack-the-plugin from the app through settings or a Jetpack banner. [https://github.com/woocommerce/woocommerce-android/pull/5771]
+
+8.4
+-----
+- [*] New Home Screen UI. Store stats are now shown in a line chart, new stats have been added such as conversion rate and revenue stats are not rounded anymore.
+- [*] Fixed an issue which resulted in showing wrong order prices if the store used more than 2 digits for price formatting [https://github.com/woocommerce/woocommerce-android/pull/5612]
+- [***] Fixed a bug that resulted in crashing app on start after upgrading from 7.4 or 7.5
+
+8.3
+-----
+- [*] App Settings: Updated the About screen
+- [**] Refunds: Add support for refunding fees
+
+8.2
+-----
+- [*] In-Person Payments: Better error handling
+
+
+8.1
+-----
+- [***] Order list filters: Merchants can now filter orders by status or date range [https://github.com/woocommerce/woocommerce-android/issues/4934]
+
+8.0
+-----
+- [***] In-Person Payments: Support of Stripe M2 Card Reader
+- [***] In-Person Payments: Some firmware updates are required and update will be started automatically
+- [**] In-Person Payments: Improved Accessibility
+
+7.9
+-----
+[**] Merchants can now edit Customer Notes, shipping, and billing addresses from orders. [https://github.com/woocommerce/woocommerce-android/pull/5106]
+
+7.8
+-----
+- [*] In-Person Payments: Long click on the readers name copies it to the clipboard
+- [*] In-Person Payments: Firmware version fully visible
+- [*] App is now able to display new feature announcement after app upgrade. [https://github.com/woocommerce/woocommerce-android/pull/5019]
+
+7.7
+-----
+- [***] In-Person Payments: Added support for accepting In-Person Card Payments in the US
+- [*] Help & Support: A site's System Status Report can now be found, copied, and shared from Settings > Help & Support > System Status Report [https://github.com/woocommerce/woocommerce-android/pull/4890]
+
+7.6.1
+-----
+- [*] Reverted the support for multi store notifications due to a bug with new order notifications not being received.
+
+7.6
+-----
+- [***] Product Images: uploading will continue now in background to allow merchants to continue their other tasks without getting blocked [https://github.com/woocommerce/woocommerce-android/pull/4720]
+- [*] Fixed a bug that resulted in a failure when purchasing DHL shipping labels under some circumstances.
+- [*] Due to popular demand, we have added support to receive push notifications for all the stores that you are logged into from the app. [https://github.com/woocommerce/woocommerce-android/pull/4673]
+
+7.5
+-----
+- [***] Merchants using WooCommerce Product Add-ons in their store can view Add-on information at Orders and Products views [https://github.com/woocommerce/woocommerce-android/pull/4689]
+- [*] Products: Filtering by category is now available. [https://github.com/woocommerce/woocommerce-android/pull/4715]
+- [*] Fixed a bug where a new order notification opened incorrect order detail info. [https://github.com/woocommerce/woocommerce-android/pull/4635]
+
+7.4
+-----
+- [*] Reviews Tab: Added a pending review label to unapproved reviews [https://github.com/woocommerce/woocommerce-android/pull/4644]
+- [*] Shipping Labels: Fixed a rare crash that occurred when adding a new package with decimal weight quantity [https://github.com/woocommerce/woocommerce-android/pull/4657]
+- [*] Shipping Labels: Updated error messages when validating origin and shipping addresses  [https://github.com/woocommerce/woocommerce-android/pull/4612]
+
+7.3
+-----
+- [***] Shipping Labels: merchants can add new payment methods and create packages directly from the app, the labels can also contain multiple packages [https://github.com/woocommerce/woocommerce-android/pull/4529]
+
+7.2
+-----
+- [*] Fixed a bug that caused empty products screen when sales of a product exceeded its limit [https://github.com/woocommerce/woocommerce-android/pull/4419]
+
+7.1
+-----
+- [*] Fixed a bug where the app doesn't show the correct quantity in orders if it's decimal [https://github.com/woocommerce/woocommerce-android/pull/4267]
+
+7.0
+-----
+- [***] Merchants using WooCommerce Shipping in their store can create international labels from the app [https://github.com/woocommerce/woocommerce-android/pull/4250]
+
+6.9
+-----
+- [*] Products: Attributes are now accessible directly from the Product Details view
+- [*] Updated empty state illustrations. [https://github.com/woocommerce/woocommerce-android/pull/3678]
+- [*] Various design tweaks on empty state screen [https://github.com/woocommerce/woocommerce-android/pull/3879]
+- [*] Removed trash option from product status in Product Settings [https://github.com/woocommerce/woocommerce-android/pull/4148]
+- [*] Fixed an issue where the app would crash when loading refunds [https://github.com/woocommerce/woocommerce-android/pull/4166]
+- [*] Fixed a rare bug that would display incorrect order quantities for variable products [https://github.com/woocommerce/woocommerce-android/pull/4193]
+
+6.8
+-----
+* [**] Due to popular demand, the Order fulfill is displayed once again when clicking on the Mark order complete button. [https://github.com/woocommerce/woocommerce-android/pull/4086]
+- [*] New descriptive error screen displayed for users without admin or shop manager access to the store. [https://github.com/woocommerce/woocommerce-android/pull/4074]
+- [**] Fixed bug that caused a jumbled screen the very first time the product list is viewed. [https://github.com/woocommerce/woocommerce-android/pull/4090]
+
+6.7
+-----
+- [***] Products: It's now possible to create a Variable Product from the Product section
+- [*] It's now possible to purchase more shipping labels on orders that already has one. [https://github.com/woocommerce/woocommerce-android/pull/3961]
+
+
+6.6
+-----
+- [***] Products: When editing a product, you can now create/delete/update product variations, product attributes and product attribute options. [https://github.com/woocommerce/woocommerce-android/pull/3946]
+- [**] Refunds: Refunding a shipping line inside an order is now possible. [https://github.com/woocommerce/woocommerce-android/pull/3935/]
+- [*] Fixed a bug would not allow to edit the product price and sale price. [https://github.com/woocommerce/woocommerce-android/pull/3926]
+- [*] Added the option to create and edit a virtual product directly from the product detail screen. [https://github.com/woocommerce/woocommerce-android/pull/3900]
+
+6.5
+-----
+* [***] Fixed bug where opening a product variation from order detail would treat it like a "regular" product rather than a variation. [https://github.com/woocommerce/woocommerce-android/pull/3822]
+- [*] Fixed bug that would cause the on-screen keyboard to disappear when searching the order list. [https://github.com/woocommerce/woocommerce-android/pull/3828]
+- [**] Beta feature: merchants from US can create shipping labels for physical orders from the app, the feature supports for now only orders where the shipping address is in the US. [https://github.com/woocommerce/woocommerce-android/pull/3844]
+- [*] Fixed a bug that resulted in displaying inaccurate information about expired shipping labels. [https://github.com/woocommerce/woocommerce-android/pull/3849]
+
+6.4
+-----
+* [*] Fixed bug where the app couldn't load products if there's decimal stock quantity. [https://github.com/woocommerce/woocommerce-android/pull/3782]
+- [*] Fixed a ui bug in the shipping label formats description screen. [https://github.com/woocommerce/woocommerce-android/pull/3791]
+
+
+6.3
+-----
+- [*] Product Type: Updated product type detail to display "Downloadable" if a product is downloadable. [https://github.com/woocommerce/woocommerce-android/pull/3679]
+- [*] Custom order status is now correctly displayed in the order details. [https://github.com/woocommerce/woocommerce-android/pull/3693]
+
+6.2
+-----
+- [*] Fixed a possible crash during the login
+
+
+6.1
+-----
+* [**] When editing a product, it's no longer necessary to tap "Done" in every screen to save changes to the local product. Instead, all changes are automatically saved locally, and tapping "Update" in the main product detail screen will send those changes to the server. [https://github.com/woocommerce/woocommerce-android/pull/3598]
+* [*] Fix adding tags taking a long time.
+* [*] Fixed a bug where the app doesn't show the updated product settings. [https://github.com/woocommerce/woocommerce-android/pull/3599]
+* [*] Fixed a bug the field of product price couldn't be edited if the device's language uses a different numerals system (e.g. Arabic) [https://github.com/woocommerce/woocommerce-android/pull/3589]
+* [*] Fixed a bug where the app doesn't receive push notification for support request reply [https://github.com/woocommerce/woocommerce-android/pull/3607]
+
+6.0
+-----
+* [*] Fixed a bug where the Top Performers were displayed twice. [https://github.com/woocommerce/woocommerce-android/pull/3514]
+* [**] Due to popular demand, the product SKU is displayed once again in Order Details screen. [https://github.com/woocommerce/woocommerce-android/pull/3517]
+
+5.9
+-----
+* [*] Fixed a rare crash when adding a new product category that includes symbols. [https://github.com/woocommerce/woocommerce-android/pull/3415]
+* [*] Fixed a crash in the product images gallery when re-ordering photos by drag and drop. [https://github.com/woocommerce/woocommerce-android/pull/3465]
+* [*] Fixed a bug when the search view was incorrectly displayed in product detail screen. [https://github.com/woocommerce/woocommerce-android/pull/3410]
+* [**] Updated a timeout limit for server requests, which may resolve some loading issues. [https://github.com/woocommerce/woocommerce-android/pull/3413]
+* [*] Fixed an small issue of a missing placeholder during image uploads. [https://github.com/woocommerce/woocommerce-android/pull/3414]
+* [*] Fixed a crash when reordering images in the image gallery. [https://github.com/woocommerce/woocommerce-android/pull/3417]
+* [*] Fixed a rare crash in the text editor. [https://github.com/woocommerce/woocommerce-android/pull/3419]
+* [*] Fixed an issue when a product description is after switching to HTML mode. [https://github.com/woocommerce/woocommerce-android/pull/3421]
+* [*] Fixed an crash when a shipping label is missing a date. [https://github.com/woocommerce/woocommerce-android/pull/3424]
+* [*] Fixed a small issue when an empty screen is displayed if no products match the filter. [https://github.com/woocommerce/woocommerce-android/pull/3425]
+* [*] Fixed a small issue of the back arrow in the product list screen after tapping the Add product button. [https://github.com/woocommerce/woocommerce-android/pull/3430]
+* [*] Fixed a bug when a discard dialog is displayed even if no tags were changed in the product details. [https://github.com/woocommerce/woocommerce-android/pull/3449]
+* [*] Fixed a rare bug when an blank menu is displayed after tapping on a notification. [https://github.com/woocommerce/woocommerce-android/pull/3451]
+* [*] Removed the obsolete purchase details card from product details. [https://github.com/woocommerce/woocommerce-android/pull/3453]
+* [*] Fixed a rare crash in product filtering. [https://github.com/woocommerce/woocommerce-android/pull/3454]
+* [*] Fixed a rare crash order details. [https://github.com/woocommerce/woocommerce-android/pull/3455]
+* [*] Fixed a minor UI layout issue review detail screen. [https://github.com/woocommerce/woocommerce-android/pull/3461]
+* [*] Possibly fixed a crash in product detail screen. [https://github.com/woocommerce/woocommerce-android/pull/3463]
+* [*] Fixed a rare crash caused by invalid server API response. [https://github.com/woocommerce/woocommerce-android/pull/3464]
+
+5.8
+-----
+* [**] Products: Now you can add/edit downloadable files, manage linked products and delete products. [https://github.com/woocommerce/woocommerce-android/pull/3056]
+* [*] Fixed a bug where the moderation buttons in the product review detail would be partially hidden for some locales [https://github.com/woocommerce/woocommerce-android/pull/3382]
+
+5.7
+-----
+* [*] Fixed a bug where a selection made in a dialog was ignored (for example the shipping labels reprint paper size)
+* [*] Minor style tweaks to the login screens
+* [*] Show fees in the payment details of orders [https://github.com/woocommerce/woocommerce-android/pull/3228]
+* [*] Added support for passwordless logins [https://github.com/woocommerce/woocommerce-android/pull/3268]
+* [*] Fixed a bug where variable products was not displayed when shipping labels were purchased for an order. [https://github.com/woocommerce/woocommerce-android/pull/3283]
+* [**] Fixed an issue where the app could not open the email client on Android 11 during the magic link login process. [https://github.com/woocommerce/woocommerce-android/pull/3291]
+* [***] Now it's possible to remove an image from a Product Variation if the WC version 4.7+. [https://github.com/woocommerce/woocommerce-android/pull/3312]
+* [*] New descriptive error screen displayed during log in with site address [https://github.com/woocommerce/woocommerce-android/pull/3331]
+
+5.6
+----
+* [****] We've updated the UI to a crisper, cleaner design [https://github.com/woocommerce/woocommerce-android/pull/3136]
+* Fixed an issue with unexpected shipment tracking UI in order details
+* Fixed an issue with caching and loading of order details
+
+5.5
+-----
+
+5.4.1
+-----
+** Fixed issue in order product variations where an empty variation key would cause a crash [https://github.com/woocommerce/woocommerce-android/pull/3188]
+
+5.4
+-----
+* Selected product variation information now fully displayed in order details
+* Fixed a rare crash happening when adding new product category and selecting product filter options. [https://github.com/woocommerce/woocommerce-android/pull/3098]
+
+5.3
+-----
+* In Settings > Beta features, a Products switch is now available for turning Products M4 features on and off (default off). Products M4 features: add a simple/grouped/external product with actions to publish or save as draft.
+* Application settings have been moved to a gear icon on the Dashboard
+* You can now view product review details directly from product detail screen
+* Product detail screen now includes the number of ratings for that product
+* Fixed slowness in order screens
+* Order detail screen now includes option to print and refund shipping labels if you have the WooCommerce Shipping & Tax extension
+
+5.2
+-----
+* Product editing is now out of beta and is available for all users
+
+5.1
+-----
+* Implemented new login flow complete with new screen designs! #2851
+* Orders by order status screen now displays actual order count instead of max 99. #2853
+
+5.0
+-----
+* Fixed an issue where switching between light and dark themes on older Android versions made the app unresponsive.
+* Fixed a common crash when choosing a product image
+* You can now give your opinion for the Product sections with the new Give Feedback Banner
+
+4.9
+-----
+* Creates CrowdSignal integration for app Feedback survey
+* You can now edit variations (price, description, inventory, visibility and shipping)
+* Products: now you can edit grouped, external and variable products, including updating product type, categories and tags.
+
+4.8
+-----
+* Added a fix to display the Add shipment tracking section only if the Shipment Tracking plugin is available
+* Fixed a rare crash caused by attempting to hide a non-active view
+
+4.7
+-----
+* Disabled beta options and removed Improved Stats as selectable option from it
+* Set Stats V4 as the default choice
+* Update Stats V3 due date warning message to September 1, 2020
+* Fixed cursor window size-related crashes for device running Android P and above
+
+4.6
+-----
+* Added a fix to support multiple new order notifications for a store.
+* Updated the background color of the login views.
+* Moved privacy notice for CA users to the About App screen.
+* Added a placeholder for orders without a customer name.
+
+4.5
+-----
+* Added a link to the new privacy notice for california users
+* Products: now you can update product images, product settings, viewing and sharing a product
+
+4.4
+-----
+* Minor style tweaks to login screens
+* Fixes text color on support ticket views for dark mode
+* Adds a fix to retain the cursor position when updating product title
+* Fixed a potential memory leak while switching between stores
+* Reverted the notification icon back to the W for better visibility
+* Adds a fix to display the exact stock status for a product in Product detail
+
+4.3
+-----
+* Added shipment tracking to the order detail screen
+* Fixed a crash in the product image viewer
+* Beta feature: Try out the new product editing functionality
+* Fixed a crash when updating the shipping dimensions of a product
+* Fixed a crash when rapidly double clicking to navigate to another screen
+* All orders tab now displays future-dated orders
+* Fixed crash in order detail after returning from the refund screen
+* You can now filter and sort Products by clicking on the Products tab!
+* Fixes text color on support ticket views for dark mode
+
+4.2.1
+-----
+* Fixed crash happening on Android 5.1 while applying dynamic themes
+
+4.2
+-----
+* Bugfix: Removed detached and non-functioning text counter in the support email dialog
+* Fixed issue where dark theme version of placeholder images were not themed properly
+* Minor styling tweaks to various login screens
+* Changed notification icon to match the app icon
+
+4.1
+-----
+* App colors have been updated for a fresh new look
+* Dark mode is now available!
+* Misc bug fixes
+
+4.0
+-----
+* Products is now available with limited editing for simple products!
+* Fixed a date conversion bug in orders that was causing some orders to be hidden or grouped incorrectly.
+
+3.9
+-----
+* Fixed a crash when clicking on 2 products at the same time from the Products list section.
+
+3.8
+-----
+* Limited editing is now available for simple products (requires enabling Settings > Beta features > Products)
+
+3.7
+-----
+* Added support to display negative revenue in our new stats screen!
+
+3.6
+-----
+* Fixed a few problems with the new "empty states," such as being cut off on smaller screens in landscape
+* Fixed a bug that could cause the reviews list to be empty when returning to it after rotating the device
+
+3.5
+-----
+* Refunds are back! Select individual order items and the refund amount will be automatically calculated for you
+* Fixed a crash when opening the app from a new order notification
+
+3.4
+-----
+* Fixed a problem when the order list did not sync with the server
+
+3.3
+-----
+* In rare situations, the labels on the bottom navigation bar could be cut off
+* Fixed a rare crash when updating a product variant in wp-admin and refreshing the same in the app.
+* Fixed bug that could cause stats chart to prevent scrolling vertically
+* Fixed bug that caused reviews to show an incorrect timestamp
+* Fixed rare crash when backing out of an order immediately after changing order status
+* Fixed the sorting in product variations to match the sorting displayed on the web.
+
+3.2
+-----
+* Added a new option in the Settings page for users to opt in or out of our new Products tab.
+* Added a new variants section in the Product detail screen for variable products
+* The bottom navigation bar no longer disappears when scrolling
+* Fixed a rare crash in refunds when custom order numbers are used
+* Fixed a rare crash when updating a product variant in wp-admin and refreshing the same in the app.
+* Temporarily disabled the refunds feature due to a reporting inconsistency issue
+
+3.1
+-----
+* The new beta stats UI now requires WooCommerce Admin plugin version 0.22+
+
+3.0
+-----
+* The logic that loads and updates the orders list view with orders has been completely revamped and optimized. Orders now load faster!
+* Can't remember your WordPress.com credentials? No problem! We've added a new login option that allows a user to enter their site credentials during login. If these credentials work, the app will fetch the connected WordPress.com account information and allow the user to complete the login process using a magic link.
+
+* Added a new refunding feature that brings the ability to specify the amount to refund
+* Products with multiple images now show all images in a gallery.
+* Bugfix: Fixed a rare crash that would happen in the "Add Order Note" view while saving state when the app is pushed to the background.
+* The order detail view now includes the shipping method of the order.
+
+2.9
+-----
+* The orders tab has received a major design overhaul! Search and filtering have been consolidated into a single view that includes a total count of orders by order status. The orders list is now broken up int two tabs: Processing & All. The Processing tab shows all orders waiting to be processed.
+* The order detail view has also received some touchups.
+* We now officially support Android 10!
+* Several minor bug fixes are also included in this release.
+
+2.8
+-----
+* Revamped the order list page by providing a new tab for unfulfilled orders
+* Order search functionality has been redesigned and now displays counts by order status. Items in this list can be clicked to immediately filter by that order status as well as allows for searching for orders by order status.
+* Fixed missing cursor in order list search
+* See a list of issued refunds inside the order detail screen
+* Fixed rare crash on opening stats page with WooCommerce Admin plugin enabled
+
+2.7
+-----
+* Added brand new stats page for user with the WooCommerce Admin plugin and provided an option for users to opt in or out directly from the Settings page.
+* The visitor stats is hidden from the stats page if the stats module is disabled for a site.
+* Updated the Customer information and Payment section design of an Order detail for improved readability.
+
+2.6
+-----
+* Added brand new stats page for user with the WooCommerce Admin plugin and provided an option for users to opt in or out directly from the Settings page.
+* Added an option to bypass the Jetpack required screen during the login process and attempt to log into the site anyway.
+* Fixed a bug in the Jetpack connection check during login where a small percentage of sites with Jetpack properly connected were coming back as not connected and preventing users from logging in successfully.
+
+2.5
+-----
+* Fixed rare crash after fulfilling an order and then minimizing the app.
+* Product names can now wrap to two lines in order detail.
+* Added a new date bar to the Stats page to better communicate the date range of the data displayed.
+* Bug fix: reviews tab incorrectly shows a badge when an order notification is received.
+* Bug fix: switching to the reviews tab removes order notifications.
+* Bug fix: selected site in the site picker changes back to the previous selection after sites are loaded.
+* Bug fix: Reviews tab incorrectly shows a badge when an order notification is received.
+
+2.4
+-----
+* The Notifications tab has been replaced by Reviews
+* The unfulfilled order count has been removed from the dashboard and is now shown as a badge on the order list
+* Added support to update the app without even going to the play store.
+
+2.3
+-----
+* Fixed a bug where the shipping/billing details for a virtual order was being displayed.
+* Added option to request for new features right from the app in the Settings page
+* Added visitor stats to stores with no orders
+* The unfilled order count doesn't re-animate in every time the dashboard is restored or refreshed
+* Added option to view our hiring page right from the app in the Settings page
+* Added "Copy tracking number" to the tracking popup menu in order detail
+* Login now works properly for sites with redirects
+
+2.2
+-----
+* Fixed a bug where the notifications list would be empty after logging out and back into app
+* Added pull to refresh support for Order Detail page
+* Added a "refresh app" option to the sign in flow to check for updates to the selected site
+
+2.1
+-----
+* The sign in flow has been completely revamped with new help screens and documentation to help users successfully login to the app.
+* The orders list will now populate with cached data while it attempts to fetch fresh orders from the API.
+* Fixed a bug where the title of the current view may not update appropriately when navigating the app.
+* Shipping address and billing address will only be displayed it is is available.
+* Added support for adding and deleting shipment tracking information on an order.
+
+2.0
+----
+* Translations have been added for the "Orders to Fulfill" card in My Store.
+
+1.9
+-----
+
+Improvements
+* Dates have been added to the order list
+
+1.8
+-----
+
+1.7
+-----
+
+Improvements
+* Changed FAQ button in help section to "Help Center". The button now routes to WooCommerce mobile documentation.
+* Hide the external link button on shipment tracking views if no external link available
+* Redirect to username/password login when WordPress.com reports email login not allowed
+* Shipment Tracking date formatting is now localized
+
+New Features
+* You can now tap a product to view a read-only detail view
+
+1.6
+-----
+
+Bugfixes
+* Fixed bug that led to incorrect stats bar heights
+* Fixed rare crash opening order detail when it's already showing
+* Fixed rare crash in order detail while loading product images
+* Fixed rare crash when showing order note
+* Fixed a very rare crash when showing the filter menu options button
+* Minor style fixes
+
+Improvements
+* Dashboard no longer reloads every time you return to it
+
+New Features
+* New support for the Shipment Tracking plugin. Read-only Shipment tracking information will now be displayed on a completed order and packages may be tracked directly from the order detail screen. Support for adding shipment tracking information is coming in a future release, so stay tuned!

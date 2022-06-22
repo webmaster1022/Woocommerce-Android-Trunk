@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_products"
+    app:startDestination="@+id/productDetailFragment">
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.woocommerce.android.ui.products.ProductDetailFragment"
+        tools:layout="@layout/fragment_product_detail">
+        <argument
+            android:name="remoteProductId"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <argument
+            android:name="isAddProduct"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="isTrashEnabled"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_variationListFragment"
+            app:destination="@id/variationListFragment" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_productInventoryFragment"
+            app:destination="@id/productInventoryFragment" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_productPricingFragment"
+            app:destination="@id/productPricingFragment" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_productExternalLinkFragment"
+            app:destination="@id/productExternalLinkFragment" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_productReviewsFragment"
+            app:destination="@id/productReviewsFragment" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_attributeListFragment"
+            app:destination="@id/attributeListFragment"/>
+        <action
+            android:id="@+id/action_productDetailFragment_to_productTypesBottomSheetFragment"
+            app:destination="@id/productTypesBottomSheetFragment">
+            <argument
+                android:name="isAddProduct"
+                android:defaultValue="false"
+                app:argType="boolean" />
+        </action>
+        <action
+            android:id="@+id/action_productDetailFragment_to_nav_graph_image_gallery"
+            app:destination="@id/nav_graph_image_gallery">
+            <argument
+                android:name="remoteId"
+                android:defaultValue="0L"
+                app:argType="long" />
+            <argument
+                android:name="images"
+                app:argType="com.woocommerce.android.model.Product$Image[]" />
+            <argument
+                android:name="selectedImage"
+                app:argType="com.woocommerce.android.model.Product$Image"
+                app:nullable="true" />
+            <argument
+                android:name="showChooser"
+                app:argType="boolean" />
+            <argument
+                android:name="requestCode"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_productDetailFragment_to_productDownloadsFragment"
+            app:destination="@id/productDownloadsFragment"
+            app:enterAnim="@anim/activity_fade_in"
+            app:exitAnim="@null"
+            app:popEnterAnim="@null"
+            app:popExitAnim="@anim/activity_fade_out" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_addAttributeFragment"
+            app:destination="@id/addAttributeFragment">
+            <argument
+                android:name="isVariationCreation"
+                android:defaultValue="false"
+                app:argType="boolean" />
+        </action>
+        <action
+            android:id="@+id/action_productDetailFragment_to_productAddonsFragment"
+            app:destination="@id/productAddonsFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/variationListFragment"
+        android:name="com.woocommerce.android.ui.products.variations.VariationListFragment"
+        android:label="variationListFragment"
+        tools:layout="@layout/fragment_variation_list">
+        <argument
+            android:name="remoteProductId"
+            android:defaultValue="0L"
+            app:argType="long" />
+
+        <action
+            android:id="@+id/action_variationListFragment_to_variationDetailFragment"
+            app:destination="@id/variationDetailFragment" />
+        <action
+            android:id="@+id/action_variationListFragment_to_addAttributeFragment"
+            app:destination="@id/addAttributeFragment">
+            <argument
+                android:name="isVariationCreation"
+                android:defaultValue="false"
+                app:argType="boolean" />
+        </action>
+        <action
+            android:id="@+id/action_variationListFragment_to_variationsBulkUpdateAttrPickerFragment"
+            app:destination="@id/variationsBulkUpdateAttrPickerFragment" >
+            <argument
+                android:name="variationsToUpdate"
+                app:argType="com.woocommerce.android.model.ProductVariation[]" />
+        </action>
+
+    </fragment>
+    <dialog
+        android:id="@+id/variationsBulkUpdateAttrPickerFragment"
+        android:name="com.woocommerce.android.ui.products.variations.VariationsBulkUpdateAttrPickerDialog"
+        android:label="variationsBulkUpdateAttrPickerFragment">
+        <argument
+            android:name="variationsToUpdate"
+            app:argType="com.woocommerce.android.model.ProductVariation[]" />
+        <action
+            android:id="@+id/action_variationsBulkUpdateAttrPickerFragment_to_variationsBulkUpdatePriceFragment"
+            app:destination="@id/variationsBulkUpdatePriceFragment">
+            <argument
+                android:name="priceUpdateData"
+                app:argType="com.woocommerce.android.ui.products.variations.VariationsBulkUpdatePriceViewModel$PriceUpdateData" />
+        </action>
+    </dialog>
+    <fragment
+        android:id="@+id/variationsBulkUpdatePriceFragment"
+        android:name="com.woocommerce.android.ui.products.variations.VariationsBulkUpdatePriceFragment"
+        android:label="variationsBulkUpdatePriceFragment">
+        <argument
+            android:name="priceUpdateData"
+            app:argType="com.woocommerce.android.ui.products.variations.VariationsBulkUpdatePriceViewModel$PriceUpdateData" />
+    </fragment>
+    <fragment
+        android:id="@+id/attributeListFragment"
+        android:name="com.woocommerce.android.ui.products.variations.attributes.AttributeListFragment"
+        android:label="attributeListFragment">
+        <argument
+            android:name="isVariationCreation"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <action
+            android:id="@+id/action_attributeListFragment_to_variationListFragment"
+            app:destination="@id/variationListFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/productDetailFragment">
+            <argument
+                android:name="isVariationCreation"
+                android:defaultValue="false"
+                app:argType="boolean" />
+        </action>
+        <action
+            android:id="@+id/action_attributeListFragment_to_addAttributeFragment"
+            app:destination="@id/addAttributeFragment">
+            <argument
+                android:name="isVariationCreation"
+                android:defaultValue="false"
+                app:argType="boolean" />
+        </action>
+        <action
+            android:id="@+id/action_attributeListFragment_to_attributesAddedFragment"
+            app:destination="@id/attributesAddedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAttributeFragment"
+        android:name="com.woocommerce.android.ui.products.variations.attributes.AddAttributeFragment"
+        android:label="addAttributeFragment">
+        <argument
+            android:name="isVariationCreation"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_addAttributeFragment_to_attributeListFragment"
+            app:destination="@id/attributeListFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/addAttributeFragment">
+            <argument
+                android:name="isVariationCreation"
+                android:defaultValue="false"
+                app:argType="boolean" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/renameAttributeFragment"
+        android:name="com.woocommerce.android.ui.products.variations.attributes.RenameAttributeFragment"
+        android:label="renameAttributeFragment">
+        <argument
+            android:name="attributeName"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAttributeTermsFragment"
+        android:name="com.woocommerce.android.ui.products.variations.attributes.AddAttributeTermsFragment"
+        android:label="addAttributeTermsFragment">
+        <argument
+            android:name="attributeId"
+            app:argType="long"
+            app:nullable="false" />
+        <argument
+            android:name="attributeName"
+            app:argType="string"
+            app:nullable="false" />
+        <argument
+            android:name="isNewAttribute"
+            app:argType="boolean" />
+        <argument
+            android:name="isVariationCreation"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_attributeTermsFragment_to_renameAttributeFragment"
+            app:destination="@id/renameAttributeFragment" />
+        <action
+            android:id="@+id/action_addAttributeTermsFragment_to_attributeListFragment"
+            app:destination="@id/attributeListFragment"
+            app:popUpTo="@id/addAttributeFragment">
+            <argument
+                android:name="isVariationCreation"
+                android:defaultValue="false"
+                app:argType="boolean" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/attributesAddedFragment"
+        android:name="com.woocommerce.android.ui.products.variations.attributes.AttributesAddedFragment"
+        android:label="attributesAddedFragment"
+        tools:layout="@layout/fragment_attributes_added">
+        <action
+            android:id="@+id/action_attributesAddedFragment_to_variationListFragment"
+            app:destination="@id/variationListFragment" />
+        <action
+            android:id="@+id/action_attributesAddedFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nav_graph_products" />
+    </fragment>
+    <fragment
+        android:id="@+id/aztecEditorFragment"
+        android:name="com.woocommerce.android.ui.aztec.AztecEditorFragment"
+        tools:layout="@layout/fragment_aztec_editor">
+        <argument
+            android:name="aztecText"
+            android:defaultValue='""'
+            app:argType="string" />
+        <argument
+            android:name="aztecTitle"
+            android:defaultValue='""'
+            app:argType="string" />
+        <argument
+            android:name="aztecCaption"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="requestCode"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="productTitle"
+            android:defaultValue='""'
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/productInventoryFragment"
+        android:name="com.woocommerce.android.ui.products.ProductInventoryFragment"
+        tools:layout="@layout/fragment_product_inventory">
+        <argument
+            android:name="requestCode"
+            app:argType="integer" />
+        <argument
+            android:name="inventoryData"
+            app:argType="com.woocommerce.android.ui.products.ProductInventoryViewModel$InventoryData" />
+        <argument
+            android:name="sku"
+            app:argType="string" />
+        <argument
+            android:name="productType"
+            android:defaultValue="SIMPLE"
+            app:argType="com.woocommerce.android.ui.products.ProductType" />
+    </fragment>
+    <fragment
+        android:id="@+id/editVariationAttributesFragment"
+        android:name="com.woocommerce.android.ui.products.variations.attributes.edit.EditVariationAttributesFragment"
+        tools:layout="@layout/fragment_edit_variation_attributes">
+        <argument
+            android:name="remoteProductId"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <argument
+            android:name="remoteVariationId"
+            android:defaultValue="0L"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/productShippingFragment"
+        android:name="com.woocommerce.android.ui.products.ProductShippingFragment"
+        tools:layout="@layout/fragment_product_shipping">
+        <action
+            android:id="@+id/action_productShippingFragment_to_productShippingClassFragment"
+            app:destination="@id/productShippingClassFragment" />
+        <argument
+            android:name="requestCode"
+            app:argType="integer" />
+        <argument
+            android:name="shippingData"
+            app:argType="com.woocommerce.android.ui.products.ProductShippingViewModel$ShippingData" />
+    </fragment>
+    <fragment
+        android:id="@+id/productShippingClassFragment"
+        android:name="com.woocommerce.android.ui.products.ProductShippingClassFragment"
+        android:label="ProductShippingClassFragment">
+        <argument
+            android:name="productShippingClassId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/productPricingFragment"
+        android:name="com.woocommerce.android.ui.products.ProductPricingFragment"
+        tools:layout="@layout/fragment_product_pricing">
+        <argument
+            android:name="requestCode"
+            app:argType="integer" />
+        <argument
+            android:name="pricingData"
+            app:argType="com.woocommerce.android.ui.products.ProductPricingViewModel$PricingData" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDownloadsFragment"
+        android:name="com.woocommerce.android.ui.products.downloads.ProductDownloadsFragment"
+        tools:layout="@layout/fragment_product_downloads_list">
+        <action
+            android:id="@+id/action_productDownloadsFragment_to_productDownloadsSettingsFragment"
+            app:destination="@id/productDownloadsSettingsFragment"
+            app:enterAnim="@anim/activity_fade_in"
+            app:exitAnim="@null"
+            app:popEnterAnim="@null"
+            app:popExitAnim="@anim/activity_fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productExternalLinkFragment"
+        android:name="com.woocommerce.android.ui.products.ProductExternalLinkFragment"
+        android:label="ProductExternalLinkFragment"
+        tools:layout="@layout/fragment_product_external_link">
+        <argument
+            android:name="remoteMediaId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/productCategoriesFragment"
+        android:name="com.woocommerce.android.ui.products.categories.ProductCategoriesFragment"
+        tools:layout="@layout/fragment_product_categories_list">
+        <argument
+            android:name="remoteProductId"
+            android:defaultValue="0L"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/productTagsFragment"
+        android:name="com.woocommerce.android.ui.products.tags.ProductTagsFragment"
+        tools:layout="@layout/fragment_product_tags">
+        <argument
+            android:name="remoteProductId"
+            android:defaultValue="0L"
+            app:argType="long" />
+    </fragment>
+    <dialog
+        android:id="@+id/productDetailBottomSheetFragment"
+        android:name="com.woocommerce.android.ui.products.ProductDetailBottomSheetFragment"
+        tools:layout="@layout/dialog_product_detail_bottom_sheet_list">
+        <argument
+            android:name="productType"
+            app:argType="com.woocommerce.android.ui.products.ProductType" />
+    </dialog>
+    <dialog
+        android:id="@+id/productTypesBottomSheetFragment"
+        android:name="com.woocommerce.android.ui.products.ProductTypesBottomSheetFragment"
+        tools:layout="@layout/dialog_product_detail_bottom_sheet_list">
+        <argument
+            android:name="remoteProductId"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <argument
+            android:name="isAddProduct"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="currentProductType"
+            android:defaultValue="null"
+            app:nullable="true"
+            app:argType="string"
+            />
+        <argument
+            android:name="isCurrentProductVirtual"
+            android:defaultValue="false"
+            app:argType="boolean"
+            />
+    </dialog>
+    <fragment
+        android:id="@+id/productReviewsFragment"
+        android:name="com.woocommerce.android.ui.products.reviews.ProductReviewsFragment"
+        tools:layout="@layout/fragment_reviews_list">
+        <argument
+            android:name="remoteProductId"
+            android:defaultValue="0L"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupedProductListFragment"
+        android:name="com.woocommerce.android.ui.products.GroupedProductListFragment"
+        tools:layout="@layout/fragment_product_list">
+        <argument
+            android:name="remoteProductId"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <argument
+            android:name="productIds"
+            app:argType="long[]" />
+        <argument
+            android:name="groupedProductListType"
+            app:argType="com.woocommerce.android.ui.products.GroupedProductListType" />
+    </fragment>
+    <fragment
+        android:id="@+id/productSelectionListFragment"
+        android:name="com.woocommerce.android.ui.products.ProductSelectionListFragment"
+        tools:layout="@layout/fragment_product_list">
+        <argument
+            android:name="remoteProductId"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <argument
+            android:name="groupedProductListType"
+            app:argType="com.woocommerce.android.ui.products.GroupedProductListType" />
+        <argument
+            android:name="excludedProductIds"
+            app:argType="long[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/linkedProductsFragment"
+        android:name="com.woocommerce.android.ui.products.LinkedProductsFragment"
+        tools:layout="@layout/fragment_linked_products">
+        <argument
+            android:name="remoteId"
+            android:defaultValue="0L"
+            app:argType="long" />
+    </fragment>
+
+    <include app:graph="@navigation/nav_graph_add_product_category" />
+    <include app:graph="@navigation/nav_graph_product_settings" />
+
+    <action
+        android:id="@+id/action_productDetailFragment_to_productSettingsFragment"
+        app:destination="@id/nav_graph_product_settings" />
+
+    <action
+        android:id="@+id/action_productCategoriesFragment_to_addProductCategoryFragment"
+        app:destination="@id/nav_graph_add_product_category" />
+
+    <action
+        android:id="@+id/action_global_aztecEditorFragment"
+        app:destination="@id/aztecEditorFragment" />
+
+    <action
+        android:id="@+id/action_global_productDetailBottomSheetFragment"
+        app:destination="@id/productDetailBottomSheetFragment"
+        app:enterAnim="@anim/activity_fade_in"
+        app:exitAnim="@null"
+        app:popEnterAnim="@null"
+        app:popExitAnim="@anim/activity_fade_out" />
+    <action
+        android:id="@+id/action_global_productShippingFragment"
+        app:destination="@id/productShippingFragment" />
+    <action
+        android:id="@+id/action_global_productCategoriesFragment"
+        app:destination="@id/productCategoriesFragment" />
+    <action
+        android:id="@+id/action_global_productTagsFragment"
+        app:destination="@id/productTagsFragment" />
+    <action
+        android:id="@+id/action_global_groupedProductListFragment"
+        app:destination="@id/groupedProductListFragment" />
+    <action
+        android:id="@+id/action_global_productSelectionListFragment"
+        app:destination="@id/productSelectionListFragment" />
+    <action
+        android:id="@+id/action_productDetailFragment_to_linkedProductsFragment"
+        app:destination="@id/linkedProductsFragment" />
+    <action
+        android:id="@+id/action_global_addProductDownloadBottomSheetFragment"
+        app:destination="@id/addProductDownloadBottomSheetFragment" />
+    <fragment
+        android:id="@+id/variationDetailFragment"
+        android:name="com.woocommerce.android.ui.products.variations.VariationDetailFragment"
+        android:label="variationDetailFragment">
+        <argument
+            android:name="remoteProductId"
+            app:argType="long" />
+        <argument
+            android:name="remoteVariationId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_variationDetailFragment_to_productPricingFragment"
+            app:destination="@id/productPricingFragment" />
+        <action
+            android:id="@+id/action_variationDetailFragment_to_editVariationAttributesFragment"
+            app:destination="@id/editVariationAttributesFragment" />
+        <action
+            android:id="@+id/action_variationDetailFragment_to_productInventoryFragment"
+            app:destination="@id/productInventoryFragment" />
+        <action
+            android:id="@+id/action_variationDetailFragment_to_productShippingFragment"
+            app:destination="@id/productShippingFragment" />
+        <action
+            android:id="@+id/action_variationDetailFragment_to_nav_graph_image_gallery"
+            app:destination="@id/nav_graph_image_gallery">
+            <argument
+                android:name="remoteId"
+                android:defaultValue="0L"
+                app:argType="long" />
+            <argument
+                android:name="images"
+                app:argType="com.woocommerce.android.model.Product$Image[]" />
+            <argument
+                android:name="selectedImage"
+                app:argType="com.woocommerce.android.model.Product$Image"
+                app:nullable="true" />
+            <argument
+                android:name="showChooser"
+                app:argType="boolean" />
+            <argument
+                android:name="requestCode"
+                app:argType="integer" />
+        </action>
+        <deepLink app:uri="wcandroid://variationDetail?remoteProductId={remoteProductId}&amp;remoteVariationId={remoteVariationId}" />
+    </fragment>
+    <fragment
+        android:id="@+id/productAddonsFragment"
+        android:name="com.woocommerce.android.ui.products.addons.product.ProductAddonsFragment"
+        android:label="ProductAddonsFragment" />
+    <fragment
+        android:id="@+id/productDownloadDetailsFragment"
+        android:name="com.woocommerce.android.ui.products.downloads.ProductDownloadDetailsFragment"
+        android:label="ProductDownloadDetailsFragment">
+        <argument
+            android:name="isEditing"
+            app:argType="boolean" />
+        <argument
+            android:name="productFile"
+            app:argType="com.woocommerce.android.model.ProductFile" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDownloadsSettingsFragment"
+        android:name="com.woocommerce.android.ui.products.downloads.ProductDownloadsSettingsFragment"
+        android:label="ProductDownloadsSettingsFragment" />
+    <fragment
+        android:id="@+id/mediaUploadErrorsFragment"
+        android:name="com.woocommerce.android.ui.media.MediaUploadErrorListFragment"
+        android:label="MediaUploadErrorsFragment">
+        <argument
+            android:name="remoteId"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <argument
+            android:name="errorList"
+            android:defaultValue="@null"
+            app:argType="com.woocommerce.android.ui.media.MediaFileUploadHandler$ProductImageUploadData[]"
+            app:nullable="true" />
+    </fragment>
+    <dialog
+        android:id="@+id/addProductDownloadBottomSheetFragment"
+        android:name="com.woocommerce.android.ui.products.downloads.AddProductDownloadBottomSheetFragment"
+        android:label="AddProductDownloadBottomSheetFragment"
+        tools:layout="@layout/dialog_product_add_downloadable_file" />
+    <action
+        android:id="@+id/action_global_mediaUploadErrorsFragment"
+        app:destination="@id/mediaUploadErrorsFragment" />
+    <action
+        android:id="@+id/action_global_productDownloadDetailsFragment"
+        app:destination="@id/productDownloadDetailsFragment" />
+    <action
+        android:id="@+id/action_global_addVariationAttributeTermsFragment"
+        app:destination="@id/addAttributeTermsFragment" />
+    <include app:graph="@navigation/nav_graph_image_gallery" />
+</navigation>

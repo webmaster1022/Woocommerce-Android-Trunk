@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/productInfo_iconFrame"
+        android:layout_width="@dimen/image_minor_100"
+        android:layout_height="@dimen/image_minor_100"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="@dimen/major_100"
+        android:background="@drawable/picture_frame"
+        android:padding="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/productInfo_icon"
+            android:layout_width="@dimen/image_minor_100"
+            android:layout_height="@dimen/image_minor_100"
+            android:layout_gravity="center"
+            android:contentDescription="@string/orderdetail_product_image_contentdesc"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_product"
+            tools:visibility="visible" />
+    </FrameLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/productInfo_name"
+        style="@style/Woo.ListItem.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBaseline_toBaselineOf="@+id/productInfo_total"
+        app:layout_constraintEnd_toStartOf="@+id/productInfo_total"
+        app:layout_constraintStart_toEndOf="@+id/productInfo_iconFrame"
+        tools:text="Candle" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/productInfo_total"
+        style="@style/Woo.ListItem.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/major_100"
+        tools:text="$30.00" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/productInfo_attributes"
+        style="@style/Woo.ListItem.Body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/productInfo_total"
+        app:layout_constraintStart_toEndOf="@+id/productInfo_iconFrame"
+        app:layout_constraintTop_toBottomOf="@+id/productInfo_name"
+        tools:text="Red, Medium • $15.00 x 2" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/productInfo_SKU"
+        style="@style/Woo.ListItem.Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/orderdetail_product_lineitem_sku_value"
+        app:layout_constraintStart_toEndOf="@+id/productInfo_iconFrame"
+        app:layout_constraintTop_toBottomOf="@+id/productInfo_attributes"
+        tools:visibility="visible" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/productInfo_addons"
+        style="@style/Woo.ListItem.Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/minor_100"
+        android:background="?attr/selectableItemBackground"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        android:text="@string/orderdetail_product_lineitem_view_addons_action"
+        android:textColor="@color/color_on_background"
+        android:visibility="gone"
+        app:drawableTint="@color/color_on_surface_medium"
+        app:layout_constraintStart_toEndOf="@+id/productInfo_iconFrame"
+        app:layout_constraintTop_toBottomOf="@+id/productInfo_SKU"
+        tools:text="View Add-ons"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

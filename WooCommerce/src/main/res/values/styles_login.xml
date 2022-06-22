@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Overloads of Login Themes
+     -->
+    <style name="LoginTheme" parent="Theme.LoginFlow">
+        <!-- Colors -->
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimarySurface">@color/color_primary_surface</item>
+        <item name="colorPrimaryVariant">@color/color_primary_variant</item>
+        <item name="colorSecondary">@color/color_secondary</item>
+        <item name="colorSecondaryVariant">@color/color_secondary_variant</item>
+
+        <item name="colorSurface">@color/color_surface</item>
+        <item name="colorError">@color/color_error</item>
+
+        <item name="colorOnPrimary">@color/color_on_primary</item>
+        <item name="colorOnPrimarySurface">@color/color_on_primary_surface</item>
+        <item name="colorOnBackground">@color/color_on_background</item>
+        <item name="colorOnSurface">@color/color_on_surface</item>
+        <item name="colorOnError">@color/color_on_error</item>
+
+        <item name="colorAccent">@color/color_primary</item>
+        <item name="colorControlNormal">@color/color_primary</item>
+        <item name="android:colorControlActivated">@color/color_primary</item>
+
+        <item name="alertDialogTheme">@style/Theme.Woo.Dialog</item>
+        <item name="materialAlertDialogTheme">@style/Theme.Woo.Dialog</item>
+
+        <!-- Typography -->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.Woo.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.Woo.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.Woo.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.Woo.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Woo.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Woo.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Woo.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.Woo.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Woo.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Woo.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Woo.Button</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Woo.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.Woo.Overline</item>
+        <item name="textAppearanceBadge">@style/TextAppearance.Woo.Badge</item>
+
+        <!-- Custom Widgets -->
+        <item name="tagViewStyle">@style/Woo.Tag</item>
+        <item name="flowLayoutStyle">@style/Woo.FlowLayout</item>
+        <item name="settingsToggleOptionStyle">@style/Widget.Woo.Settings.OptionToggle</item>
+        <item name="settingsOptionValueStyle">@style/Widget.Woo.Settings.OptionValue</item>
+        <item name="settingsCategoryHeaderStyle">@style/Widget.Woo.Settings.CategoryHeader</item>
+        <item name="settingsButtonStyle">@style/Widget.Woo.Settings.Button</item>
+        <item name="wcToggleOutlinedButtonStyle">@style/Widget.Woo.WCToggleOutlinedButton</item>
+        <item name="wcToggleOutlinedSelectorButtonStyle">@style/Widget.Woo.WCToggleOutlinedSelectorButton</item>
+        <item name="wcMaterialOutlinedSpinnerViewStyle">@style/Widget.Woo.WCMaterialOutlinedSpinnerView</item>
+        <item name="wcMaterialOutlinedCurrencyEditTextViewStyle">@style/Widget.Woo.WCMaterialOutlinedCurrencyEditTextView</item>
+        <item name="wcMaterialOutlinedEditTextViewStyle">@style/Widget.Woo.WCMaterialOutlinedEditTextView</item>
+        <item name="wcSingleOptionTextViewStyle">@style/Widget.Woo.WCSingleOptionTextView</item>
+    </style>
+
+    <!-- TextViews -->
+
+    <style name="Widget.LoginFlow.TextView.Label" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">?attr/textAppearanceBody2</item>
+        <item name="android:textColor">@color/color_on_surface_high</item>
+    </style>
+
+    <!-- Buttons -->
+    <style name="Widget.LoginFlow.Button.Primary" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.LoginFlow.Button.Secondary</item>
+        <item name="android:textAppearance">?attr/textAppearanceButton</item>
+        <item name="backgroundTint">@color/button_colored_bg_selector</item>
+        <item name="android:textColor">@color/color_on_primary_high</item>
+        <item name="android:height">@dimen/button_height_major_100</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.LoginFlow.Button.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.LoginFlow.Button.OnSurface</item>
+        <item name="android:textAppearance">?attr/textAppearanceButton</item>
+        <item name="android:height">@dimen/button_height_major_100</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.LoginFlow.Button.Tertiary" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textAppearance">?attr/textAppearanceBody2</item>
+        <item name="textColor">@color/color_secondary</item>
+        <item name="android:textColor">@color/color_secondary</item>
+    </style>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/main_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.woocommerce.android.ui.products.FeatureWIPNoticeCard
+            android:id="@+id/addons_wip_card"
+            style="@style/Woo.Card.Expandable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/minor_100"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/content_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/addons_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:itemCount="3"
+                tools:listitem="@layout/product_addon_card" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/addons_edit_notice"
+                style="@style/Woo.TextView.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/major_100"
+                android:layout_marginStart="@dimen/major_100"
+                android:layout_marginTop="@dimen/minor_10"
+                android:drawablePadding="@dimen/minor_100"
+                android:drawableStart="@drawable/ic_info_outline_24dp"
+                android:gravity="center_vertical"
+                android:text="@string/ordered_add_ons_details_info_notice"
+                android:visibility="gone"
+                tools:visibility="visible"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
